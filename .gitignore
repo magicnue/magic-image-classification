@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.venv/
+input/
+output/
+_logs/
+*.sqlite3
+*.sqlite3-*
+
+# 本机配置、个人使用记录和旧归档
+/local/

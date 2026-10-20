@@ -1,0 +1,831 @@
+{
+  "id": "f8d2f4f8-513f-41a7-810c-903233c1099c",
+  "revision": 0,
+  "last_node_id": 11,
+  "last_link_id": 13,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "MediaInputDirectory",
+      "pos": [
+        0,
+        0
+      ],
+      "size": [
+        300,
+        162
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "root",
+          "type": "STRING",
+          "widget": {
+            "name": "root"
+          },
+          "link": null
+        },
+        {
+          "name": "recursive",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "recursive"
+          },
+          "link": null
+        },
+        {
+          "name": "include_videos",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "include_videos"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "media_input",
+          "type": "MEDIA_INPUT",
+          "links": [
+            1
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MediaInputDirectory"
+      },
+      "widgets_values": [
+        "./input",
+        true,
+        false
+      ],
+      "widgets_values_named": {
+        "root": "./input",
+        "recursive": true,
+        "include_videos": false
+      }
+    },
+    {
+      "id": 2,
+      "type": "MediaOutputDirectory",
+      "pos": [
+        0,
+        250
+      ],
+      "size": [
+        300,
+        192
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "root",
+          "type": "STRING",
+          "widget": {
+            "name": "root"
+          },
+          "link": null
+        },
+        {
+          "name": "action",
+          "type": "COMBO",
+          "widget": {
+            "name": "action"
+          },
+          "link": null
+        },
+        {
+          "name": "preserve_tree",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "preserve_tree"
+          },
+          "link": null
+        },
+        {
+          "name": "review_dir",
+          "type": "STRING",
+          "widget": {
+            "name": "review_dir"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "media_output",
+          "type": "MEDIA_OUTPUT",
+          "links": [
+            2,
+            9,
+            11
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MediaOutputDirectory"
+      },
+      "widgets_values": [
+        "./output",
+        "dry-run",
+        false,
+        "未分类"
+      ],
+      "widgets_values_named": {
+        "root": "./output",
+        "action": "dry-run",
+        "preserve_tree": false,
+        "review_dir": "未分类"
+      }
+    },
+    {
+      "id": 3,
+      "type": "MediaTaxonomy",
+      "pos": [
+        0,
+        540
+      ],
+      "size": [
+        300,
+        110
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "extra_requirements",
+          "type": "STRING",
+          "widget": {
+            "name": "extra_requirements"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "media_taxonomy",
+          "type": "MEDIA_TAXONOMY",
+          "links": [
+            3,
+            7
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MediaTaxonomy"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "widgets_values_named": {
+        "extra_requirements": ""
+      }
+    },
+    {
+      "id": 4,
+      "type": "MediaScan",
+      "pos": [
+        390,
+        170
+      ],
+      "size": [
+        290,
+        162
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "input_config",
+          "type": "MEDIA_INPUT",
+          "link": 1
+        },
+        {
+          "name": "output_config",
+          "type": "MEDIA_OUTPUT",
+          "link": 2
+        },
+        {
+          "name": "taxonomy",
+          "type": "MEDIA_TAXONOMY",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "media",
+          "type": "MEDIA_ITEMS",
+          "links": [
+            4
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MediaScan"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 5,
+      "type": "MediaPreprocess",
+      "pos": [
+        390,
+        500
+      ],
+      "size": [
+        300,
+        192
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "max_dim",
+          "type": "INT",
+          "widget": {
+            "name": "max_dim"
+          },
+          "link": null
+        },
+        {
+          "name": "no_resize",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "no_resize"
+          },
+          "link": null
+        },
+        {
+          "name": "video_seek",
+          "type": "FLOAT",
+          "widget": {
+            "name": "video_seek"
+          },
+          "link": null
+        },
+        {
+          "name": "video_frames",
+          "type": "INT",
+          "widget": {
+            "name": "video_frames"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "media_preprocess",
+          "type": "MEDIA_PREPROCESS",
+          "links": [
+            5
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MediaPreprocess"
+      },
+      "widgets_values": [
+        1024,
+        false,
+        3.0,
+        1
+      ],
+      "widgets_values_named": {
+        "max_dim": 1024,
+        "no_resize": false,
+        "video_seek": 3.0,
+        "video_frames": 1
+      }
+    },
+    {
+      "id": 6,
+      "type": "MediaLMStudio",
+      "pos": [
+        390,
+        800
+      ],
+      "size": [
+        320,
+        372
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "api_url",
+          "type": "STRING",
+          "widget": {
+            "name": "api_url"
+          },
+          "link": null
+        },
+        {
+          "name": "model",
+          "type": "STRING",
+          "widget": {
+            "name": "model"
+          },
+          "link": null
+        },
+        {
+          "name": "workers",
+          "type": "INT",
+          "widget": {
+            "name": "workers"
+          },
+          "link": null
+        },
+        {
+          "name": "timeout",
+          "type": "INT",
+          "widget": {
+            "name": "timeout"
+          },
+          "link": null
+        },
+        {
+          "name": "max_tokens",
+          "type": "INT",
+          "widget": {
+            "name": "max_tokens"
+          },
+          "link": null
+        },
+        {
+          "name": "temperature",
+          "type": "FLOAT",
+          "widget": {
+            "name": "temperature"
+          },
+          "link": null
+        },
+        {
+          "name": "retries",
+          "type": "INT",
+          "widget": {
+            "name": "retries"
+          },
+          "link": null
+        },
+        {
+          "name": "retry_delay",
+          "type": "FLOAT",
+          "widget": {
+            "name": "retry_delay"
+          },
+          "link": null
+        },
+        {
+          "name": "lms_context",
+          "type": "INT",
+          "widget": {
+            "name": "lms_context"
+          },
+          "link": null
+        },
+        {
+          "name": "lms_model_key",
+          "type": "STRING",
+          "widget": {
+            "name": "lms_model_key"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "media_lmstudio",
+          "type": "MEDIA_LMSTUDIO",
+          "links": [
+            6
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MediaLMStudio"
+      },
+      "widgets_values": [
+        "http://127.0.0.1:1234/api/v1/chat",
+        "qwen3.5-9b-abliterated-vision-q4_k_m",
+        1,
+        180,
+        96,
+        0.0,
+        3,
+        2.0,
+        8192,
+        "qwen3.5-9b-abliterated"
+      ],
+      "widgets_values_named": {
+        "api_url": "http://127.0.0.1:1234/api/v1/chat",
+        "model": "qwen3.5-9b-abliterated-vision-q4_k_m",
+        "workers": 1,
+        "timeout": 180,
+        "max_tokens": 96,
+        "temperature": 0.0,
+        "retries": 3,
+        "retry_delay": 2.0,
+        "lms_context": 8192,
+        "lms_model_key": "qwen3.5-9b-abliterated"
+      }
+    },
+    {
+      "id": 7,
+      "type": "MediaCache",
+      "pos": [
+        390,
+        1390
+      ],
+      "size": [
+        300,
+        162
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "db_path",
+          "type": "STRING",
+          "widget": {
+            "name": "db_path"
+          },
+          "link": null
+        },
+        {
+          "name": "force",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "force"
+          },
+          "link": null
+        },
+        {
+          "name": "limit",
+          "type": "INT",
+          "widget": {
+            "name": "limit"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "media_cache",
+          "type": "MEDIA_CACHE",
+          "links": [
+            8
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MediaCache"
+      },
+      "widgets_values": [
+        "",
+        false,
+        20
+      ],
+      "widgets_values_named": {
+        "db_path": "",
+        "force": false,
+        "limit": 20
+      }
+    },
+    {
+      "id": 8,
+      "type": "MediaClassify",
+      "pos": [
+        800,
+        340
+      ],
+      "size": [
+        320,
+        252
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "media",
+          "type": "MEDIA_ITEMS",
+          "link": 4
+        },
+        {
+          "name": "preprocess",
+          "type": "MEDIA_PREPROCESS",
+          "link": 5
+        },
+        {
+          "name": "lmstudio",
+          "type": "MEDIA_LMSTUDIO",
+          "link": 6
+        },
+        {
+          "name": "taxonomy",
+          "type": "MEDIA_TAXONOMY",
+          "link": 7
+        },
+        {
+          "name": "cache",
+          "type": "MEDIA_CACHE",
+          "link": 8
+        },
+        {
+          "name": "output_config",
+          "type": "MEDIA_OUTPUT",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "results",
+          "type": "MEDIA_RESULTS",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MediaClassify"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 9,
+      "type": "MediaApplyOutput",
+      "pos": [
+        1210,
+        340
+      ],
+      "size": [
+        290,
+        132
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "results",
+          "type": "MEDIA_RESULTS",
+          "link": 10
+        },
+        {
+          "name": "output_config",
+          "type": "MEDIA_OUTPUT",
+          "link": 11
+        }
+      ],
+      "outputs": [
+        {
+          "name": "results",
+          "type": "MEDIA_RESULTS",
+          "links": [
+            12
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MediaApplyOutput"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 10,
+      "type": "MediaRouteResults",
+      "pos": [
+        1580,
+        340
+      ],
+      "size": [
+        290,
+        192
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "results",
+          "type": "MEDIA_RESULTS",
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "ok",
+          "type": "MEDIA_RESULTS",
+          "links": []
+        },
+        {
+          "name": "review",
+          "type": "MEDIA_RESULTS",
+          "links": []
+        },
+        {
+          "name": "error",
+          "type": "MEDIA_RESULTS",
+          "links": []
+        },
+        {
+          "name": "all_results",
+          "type": "MEDIA_RESULTS",
+          "links": [
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MediaRouteResults"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 11,
+      "type": "MediaReport",
+      "pos": [
+        1950,
+        340
+      ],
+      "size": [
+        300,
+        162
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "results",
+          "type": "MEDIA_RESULTS",
+          "link": 13
+        },
+        {
+          "name": "report_path",
+          "type": "STRING",
+          "widget": {
+            "name": "report_path"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "report_path",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "summary",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MediaReport"
+      },
+      "widgets_values": [
+        ""
+      ],
+      "widgets_values_named": {
+        "report_path": ""
+      }
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      4,
+      0,
+      "MEDIA_INPUT"
+    ],
+    [
+      2,
+      2,
+      0,
+      4,
+      1,
+      "MEDIA_OUTPUT"
+    ],
+    [
+      3,
+      3,
+      0,
+      4,
+      2,
+      "MEDIA_TAXONOMY"
+    ],
+    [
+      4,
+      4,
+      0,
+      8,
+      0,
+      "MEDIA_ITEMS"
+    ],
+    [
+      5,
+      5,
+      0,
+      8,
+      1,
+      "MEDIA_PREPROCESS"
+    ],
+    [
+      6,
+      6,
+      0,
+      8,
+      2,
+      "MEDIA_LMSTUDIO"
+    ],
+    [
+      7,
+      3,
+      0,
+      8,
+      3,
+      "MEDIA_TAXONOMY"
+    ],
+    [
+      8,
+      7,
+      0,
+      8,
+      4,
+      "MEDIA_CACHE"
+    ],
+    [
+      9,
+      2,
+      0,
+      8,
+      5,
+      "MEDIA_OUTPUT"
+    ],
+    [
+      10,
+      8,
+      0,
+      9,
+      0,
+      "MEDIA_RESULTS"
+    ],
+    [
+      11,
+      2,
+      0,
+      9,
+      1,
+      "MEDIA_OUTPUT"
+    ],
+    [
+      12,
+      9,
+      0,
+      10,
+      0,
+      "MEDIA_RESULTS"
+    ],
+    [
+      13,
+      10,
+      3,
+      11,
+      0,
+      "MEDIA_RESULTS"
+    ]
+  ],
+  "groups": [],
+  "definitions": {
+    "subgraphs": []
+  },
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.65,
+      "offset": [
+        20,
+        20
+      ]
+    },
+    "frontendVersion": "1.52.7"
+  },
+  "version": 0.4
+}
